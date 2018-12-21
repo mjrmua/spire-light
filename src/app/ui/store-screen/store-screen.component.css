@@ -1,0 +1,25 @@
+.offers {
+    display:flex;
+    justify-content: center;
+    overflow-y: scroll;
+}
+
+.offer {
+    padding:1em;
+}
+
+.buy {
+    text-align: center;
+}
+
+.footer {
+    height: 5em;
+    background-color:lightslategray;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+}

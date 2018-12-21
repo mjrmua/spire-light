@@ -1,0 +1,7 @@
+<h1>Select Jump</h1>
+<div class="map">
+<div *ngFor="let location of state.map[state.level]" class="location">
+  <div class="planet" [ngClass]="location.type"></div>
+  {{location.name}} <button (click)="jump(location)">Jump</button>
+</div>
+</div>

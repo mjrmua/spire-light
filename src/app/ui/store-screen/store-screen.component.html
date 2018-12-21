@@ -1,0 +1,10 @@
+<h1>Shop</h1>
+<div class="offers" >
+<div class="offer" *ngFor="let card of state.store.forSale; let i=index">
+  <card [card]="card"></card>
+  <div class="buy">
+  ${{card.purchasePrice}} <button (click)="buy(i)">Buy</button>
+  </div>
+</div>
+</div>
+<div class="footer"><button (click)="done()">Done</button></div>

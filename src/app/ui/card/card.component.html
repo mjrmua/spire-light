@@ -1,0 +1,14 @@
+<div style="position:relative;">
+<div class="card" 
+[class.attack]="card.type==='Attack'"
+[class.cargo]="card.type==='Cargo'"
+[class.engineering]="card.type==='Engineering'"
+[class.drone]="card.type==='Drone'"
+>
+<div class="energyCost">{{card.energyCost}}</div>
+<div class="title">{{card.title}}</div>
+<!--<img [src]="'assets/cards/'+card.name+'.png'"/>-->
+<div class="type">{{card.type}}</div>
+<div class="description">{{card.description}}</div>
+</div> 
+</div>

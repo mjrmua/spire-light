@@ -1,0 +1,8 @@
+div {
+    position:fixed;
+    top: 50px;
+    left: 50px;
+    font-size: 3em;
+    color:black;
+    text-shadow: 0 0 0.2em #FF0000;
+}

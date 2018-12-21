@@ -1,0 +1,34 @@
+.map {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+    background-color:black;
+    color:white;
+}
+h1 {
+    text-align: center;
+}
+
+.location {
+    width:200px;
+    height:200px;
+    border-radius: 10px;
+    border:dashed blue 2px;
+    flex-direction: column;
+    display:flex;
+    justify-content: space-between;
+}
+.planet {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  transform: rotate(-15deg);
+  margin: auto;
+}
+.water-planet {
+  background: linear-gradient(to bottom, lightblue 1%, blue 50%, darkblue 100%);
+}
+.desert-planet {
+  background: linear-gradient(to bottom, lightgoldenrodyellow 1%, goldenrod 50%, brown 100%);
+}

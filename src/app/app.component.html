@@ -1,0 +1,19 @@
+<div class="screen">
+  <div class="header">
+    <div class="stats">
+    Hull: {{state.health.current}}/{{state.health.maximum}} <br/>
+    Energy: {{state.energy.current}}/{{state.energy.maximum}} <br/>
+    Shields: {{state.shield}} <br/>
+  </div>
+  <div>${{state.money}}</div>
+  <div class="stats" style="text-align: right;">
+    Hull: {{state.baddie.health.current}}/{{state.baddie.health.maximum}} <br/>
+    Shields: {{state.baddie.shield}} <br/>
+  </div>
+  </div>
+  <ng-container [ngSwitch]="state.view">
+    <battle-screen *ngSwitchCase="'Battle'"></battle-screen>
+    <store-screen *ngSwitchCase="'Store'"></store-screen>
+    <map-screen *ngSwitchCase="'Map'"></map-screen>
+  </ng-container>
+</div>

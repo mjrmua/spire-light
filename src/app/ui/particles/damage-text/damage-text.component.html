@@ -1,0 +1,8 @@
+<div id="d" 
+[style.top.px]="y" 
+[style.left.px]="x" 
+[@animate]="'finished'"
+(@animate.done)="done($event)"
+>
+  {{value}}
+</div>

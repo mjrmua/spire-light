@@ -1,0 +1,36 @@
+<particles #particles></particles>
+  <div class="main" cdkDropList (cdkDropListDropped)="play($event)"
+  #playDropRegion="cdkDropList"
+    [cdkDropListConnectedTo]="[handDropRegion]"
+  >
+  <div style="position:static;">
+      <img #player src="assets/hero.png" style="width:300px;"/>
+      <shield *ngIf="state.shield>0"></shield>
+  </div>
+  <div style="position:unset;">
+    <img #baddie src="assets/baddie.png" style="width:300px;"/>
+      <shield *ngIf="state.baddie.shield>0"></shield>
+  </div>
+</div>
+  <div class="footer">
+    <div class="deck">Draw stack: {{state.drawStack.length}}
+    </div>
+    <div class="hand" 
+    #handDropRegion="cdkDropList"
+    [cdkDropListConnectedTo]="[playDropRegion]"
+    cdkDropList cdkDropListOrientation="horizontal"
+    >
+      <div class="card" *ngFor="let card of cards; let i = index" 
+      [ngStyle] = "style(i)"  cdkDrag
+      (cdkDragStarted)="startDrag(card)"
+      >
+      <div class="example-custom-placeholder" *cdkDragPlaceholder [class.error]="playErrorMessage()">
+        {{ playErrorMessage() || verb() }}</div>
+        <card [card]="card"></card>
+    </div>
+    </div>
+    <div class="discards">
+      Discards: {{state.discards.length}}<br/>
+      <button (click)="endTurn()">End Turn</button>
+    </div>
+  </div>
