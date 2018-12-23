@@ -1,12 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ParticlesComponent } from '../particles/particles.component';
-import { State } from '../../logic/state';
-import { Card } from '../../logic/Card';
+import { ParticlesComponent } from '../../particles/particles.component';
+import { Card } from 'src/app/logic/Card';
+import { State } from 'src/app/logic/state';
 import { Subject } from 'rxjs';
-import { CommandService } from '../../logic/command.service';
-import { GameStateService } from '../../logic/game-state.service';
-import { ExplosionComponent } from '../particles/explosion/explosion.component';
-import { DamageTextComponent } from '../particles/damage-text/damage-text.component';
+import { CommandService } from 'src/app/logic/command.service';
+import { GameStateService } from 'src/app/logic/game-state.service';
+import { ExplosionComponent } from '../../particles/explosion/explosion.component';
+import { DamageTextComponent } from '../../particles/damage-text/damage-text.component';
 
 @Component({
   selector: 'battle-screen',

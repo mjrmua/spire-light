@@ -1,0 +1,38 @@
+/* MODAL STYLES
+-------------------------------*/
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: 1000;
+    
+    overflow: auto;
+
+    .body {
+        padding: 20px;
+        margin: 40px;
+    }
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-color: #000;
+    opacity: 0.75;
+    z-index: 900;
+}
+
+body.modal-open {
+overflow: hidden;
+}
+
+.closed {
+    display:none;
+}

@@ -8,6 +8,9 @@ import { ParticlesComponent } from './ui/particles/particles.component';
 import { DamageTextComponent } from 'src/app/ui/particles/damage-text/damage-text.component';
 import { ExplosionComponent } from './ui/particles/explosion/explosion.component';
 import { Card } from './logic/Card';
+import { ModalComponent } from './ui/modal/modal.component';
+import { ModalService } from './modal.service';
+import { IntroComponent } from './ui/intro/intro.component';
 
 @Component({
   selector: 'app-root',
@@ -27,8 +30,8 @@ export class AppComponent implements OnInit, OnDestroy {
   private unsubscribe: Subject<void> = new Subject();
 
   constructor( private commandService: CommandService,
-    stateService: GameStateService,
-
+    stateService: GameStateService, 
+    private modalService: ModalService
   ){
     this.state=stateService.state;
     const self=this;
@@ -52,6 +55,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.commandService.startGame();
+    this.modalService.open(IntroComponent);
   }
 
   startDrag(card){
