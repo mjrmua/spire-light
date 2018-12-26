@@ -7,6 +7,8 @@ import { CommandService } from 'src/app/logic/command.service';
 import { GameStateService } from 'src/app/logic/game-state.service';
 import { ExplosionComponent } from '../../particles/explosion/explosion.component';
 import { DamageTextComponent } from '../../particles/damage-text/damage-text.component';
+import { ModalService } from 'src/app/modal.service';
+import { ViewCardsComponent } from '../../view-cards/view-cards.component';
 
 @Component({
   selector: 'battle-screen',
@@ -28,6 +30,7 @@ export class BattleScreenComponent implements OnInit {
 
   constructor( private commandService: CommandService,
     stateService: GameStateService,
+    private modalService:ModalService
   ){
     this.state=stateService.state;
     const self=this;
@@ -60,7 +63,6 @@ export class BattleScreenComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.commandService.startGame();
   }
 
   startDrag(card){
@@ -105,6 +107,16 @@ export class BattleScreenComponent implements OnInit {
   ngOnDestroy(): void {
     this.unsubscribe.next();
     this.unsubscribe.complete(); 
+  }
+
+  viewDrawDeck() {
+      var view = this.modalService.open(ViewCardsComponent);
+      view.cards=this.state.drawStack;
+  }
+
+  viewDiscards() {
+      var view = this.modalService.open(ViewCardsComponent);
+      view.cards=this.state.discards;
   }
 
 }

@@ -13,8 +13,9 @@
   </div>
 </div>
   <div class="footer">
-    <div class="deck">Draw stack: {{state.drawStack.length}}
-    </div>
+    <button (click)="viewDrawDeck()">
+      Draw stack: {{state.drawStack.length}}
+    </button>
     <div class="hand" 
     #handDropRegion="cdkDropList"
     [cdkDropListConnectedTo]="[playDropRegion]"
@@ -30,7 +31,7 @@
     </div>
     </div>
     <div class="discards">
-      Discards: {{state.discards.length}}<br/>
+      <button (click)="viewDiscards()">Discards: {{state.discards.length}}</button>
       <button (click)="endTurn()">End Turn</button>
     </div>
-  </div>
+    </div>

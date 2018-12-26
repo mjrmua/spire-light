@@ -16,6 +16,7 @@ import { BattleScreenComponent } from './ui/screens/battle-screen/battle-screen.
 import { PlayerShipComponent } from './ui/screens/battle-screen/player-ship/player-ship.component';
 import { ShieldComponent } from './ui/screens/battle-screen/shield/shield.component';
 import { MapScreenComponent } from './ui/screens/map-screen/map-screen.component';
+import { ViewCardsComponent } from './ui/view-cards/view-cards.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { MapScreenComponent } from './ui/screens/map-screen/map-screen.component
     RemoveWrapperDirective,
     ModalComponent,
     IntroComponent,
+    ViewCardsComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +42,6 @@ import { MapScreenComponent } from './ui/screens/map-screen/map-screen.component
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [DamageTextComponent,ExplosionComponent,IntroComponent]
+  entryComponents: [DamageTextComponent,ExplosionComponent,IntroComponent, ViewCardsComponent]
 })
 export class AppModule { }

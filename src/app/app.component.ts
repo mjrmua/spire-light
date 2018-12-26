@@ -11,6 +11,7 @@ import { Card } from './logic/Card';
 import { ModalComponent } from './ui/modal/modal.component';
 import { ModalService } from './modal.service';
 import { IntroComponent } from './ui/intro/intro.component';
+import { ViewCardsComponent } from './ui/view-cards/view-cards.component';
 
 @Component({
   selector: 'app-root',
@@ -91,6 +92,11 @@ export class AppComponent implements OnInit, OnDestroy {
   play(){
     if(!this.selectedCard) return;
     this.commandService.play(this.selectedCard);
+  }
+
+  viewDeck(){
+    var view = this.modalService.open(ViewCardsComponent);
+    view.cards=this.state.deck;
   }
 
   endTurn(){
